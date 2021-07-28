@@ -1,0 +1,8 @@
+{
+	"name": "extras",
+	"version": "0.0.1",
+	"description": "Extras and shared code between client and admin",
+	"author": "Neronet Team <bm9qdw5r@gmail.com>",
+	"private": true,
+	"main": "./index.js"
+}
