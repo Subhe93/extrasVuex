@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import { boot } from 'quasar/wrappers'
 
 
 // Simple state.
@@ -31,4 +31,6 @@ const state =
 
 };
 
-Vue.prototype.$state = state;
+export default boot(({ app }) => {
+	app.config.globalProperties.$state = state;
+});

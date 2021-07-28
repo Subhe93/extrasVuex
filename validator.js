@@ -1,4 +1,4 @@
-import Vue from "vue";
+import { boot } from 'quasar/wrappers'
 import Validator from "validatorjs";
 
 Validator.useLang("ar");
@@ -33,4 +33,6 @@ const v = function(name, rules, func) {
 	];
 };
 
-Vue.prototype.$v = v;
+export default boot(({ app }) => {
+	app.config.globalProperties.$v = v;
+});

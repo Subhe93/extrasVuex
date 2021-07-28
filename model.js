@@ -1,15 +1,14 @@
-import Vue from 'vue';
+import { boot } from 'quasar/wrappers'
 
+export default boot(({ app }) => {
+	app.config.globalProperties.$model = function (name, params) {
+		if (Array.isArray(params) === false && !!params) {
+			params = [params];
+		}
 
-Vue.prototype.$model = function(name, params)
-{
-	if (Array.isArray(params) === false && !!params) {
-		params = [params];
-	}
-
-	return new Model(name, params, this);
-};
-
+		return new Model(name, params, this);
+	};
+});
 class Model
 {
 	constructor(name, params, vue)
